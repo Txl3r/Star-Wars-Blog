@@ -6,6 +6,7 @@ import { Context } from "../store/appContext"
 export const Home = () => {
 	const {store, actions} = useContext(Context)
 
+	console.log(actions.fetch)
 	return (
 	<div>
 		{actions.loadSomeData()}
