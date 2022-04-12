@@ -1,18 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../../styles/home.css";
-import { Context } from "../store/appContext"
-
+import { Card } from "./card";
 export const Home = () => {
-	const {store, actions} = useContext(Context)
 	
-	console.log(store)
+	
 	return (
 	<div>
-		{store.data.results && store.data.results.map((element, index) => {
-			return(
-				<div>{element.name}</div>
-			)
-		})}
+		<Card/>
 	</div>
 	)}
 
