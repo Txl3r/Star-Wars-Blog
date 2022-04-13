@@ -5,8 +5,10 @@ export const Home = () => {
 	
 	
 	return (
-	<div>
-		<Card/>
+	<div className="container">
+		<div className="justify-content-center card-group">
+			<Card/>
+		</div>	
 	</div>
 	)}
 

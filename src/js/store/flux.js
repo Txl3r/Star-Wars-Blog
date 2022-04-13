@@ -1,7 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			data: []
+			data: [],
+			img: "https://starwars-visualguide.com/assets/img/characters/"
+			
 		},
 		actions: {
 			loadSomeData: () => {
