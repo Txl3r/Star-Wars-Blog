@@ -7,8 +7,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 		},
 		actions: {
-			loadSomeData: () => {
-				fetch("https://www.swapi.tech/api/people",{
+			loadSomeData: (number) => {
+
+				fetch(`https://www.swapi.tech/api/people/${number}`,{
 					method: "GET",
 					redirect: "follow",
 				})

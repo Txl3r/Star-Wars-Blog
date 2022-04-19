@@ -8,7 +8,7 @@ export const Details = () => {
             <div class="card mb-3" style={{ width: "540px" }}>
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src= {store.space + store.space.result.uid + ".img"} class="img-fluid rounded-start" alt="..."/>
+                        <img src= {store.img + store.space.result.uid + ".jpg"} class="img-fluid rounded-start" alt="..."/>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
