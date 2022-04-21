@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loadSomeData: (number) => {
 
-				fetch(`https://www.swapi.tech/api/people/${number}`,{
+				fetch(`https://www.swapi.tech/api/people`,{
 					method: "GET",
 					redirect: "follow",
 				})
@@ -29,8 +29,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(error => console.error("error", error))
 			},
 
-			addFavorites: () =>{
-				actions.addFavorites(element.uid)
+			addFavorites: (item) =>{
+				setStore({addFavorites: [...store.addFavorites, item]})
 			}
 		
 		}
