@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			data: [],
 			space: {},
 			img: "https://starwars-visualguide.com/assets/img/characters/",
+			fav: [],
 			
 		},
 		actions: {
@@ -27,6 +28,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((result) => setStore({space: result}))
 				.catch(error => console.error("error", error))
 			},
+
+			addFavorites: () =>{
+				actions.addFavorites(element.uid)
+			}
 		
 		}
 	};
