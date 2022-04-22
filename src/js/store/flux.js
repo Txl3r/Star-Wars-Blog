@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					redirect: "follow",
 				})
 				.then(response => response.json())
-				.then((result) => console.log(result))
+				.then((result) => setStore({space: result}))
 				.catch(error => console.error("error", error))
 			},
 

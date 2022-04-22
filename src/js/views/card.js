@@ -17,9 +17,9 @@ export const Card = () => {
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <Link to={"/details/" + element.uid} >
                                 <button className="btn btn-outline-primary" onClick={() => {
-                                    actions.loadDetials(element)
-                                }}></button>
-                                Learn More</Link>
+                                    actions.loadDetails(element)
+                                }}>Learn More</button>
+                                </Link>
                             <button onClick={() =>{
                                 actions.addFavorites(element)
                             }} href="#" className="btn btn-outline-warning"><i className="fa fa-heart" aria-hidden="true"></i></button>

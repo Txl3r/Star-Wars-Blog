@@ -3,9 +3,9 @@ import { Context } from "../store/appContext.js"
 export const Details = () => {
     const {store, actions} = useContext(Context)
     return(
-
         <>
-            {/* <div class="card mb-3" style={{ width: "540px" }}>
+        {store.space.result ? 
+            <div class="card mb-3" style={{ width: "540px" }}>
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src= {store.img + store.space.result.uid + ".jpg"} class="img-fluid rounded-start" alt="..."/>
@@ -18,7 +18,10 @@ export const Details = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
+            :
+            <h1>Loading</h1>
+        }
         </>
     )   
         
