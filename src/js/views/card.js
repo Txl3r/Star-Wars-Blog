@@ -9,19 +9,21 @@ export const Card = () => {
         <>
 		{store.data.results && store.data.results.map((element, index) => {
 			return(
-				<div className="card mx-2" style={{width: "18rem"}}>
-                    <img className="card-img-top" src={store.img + element.uid + ".jpg"} alt="Card image cap"/>
-                    <div className="card-body">
-                        <h5 className="card-title">{element.name}</h5>
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <Link to={"/details/" + element.uid} className="btn btn-outline-primary">
-                            <button onClick={() => {
-                                actions.loadDetials(element)
-                            }}></button>
-                            Learn More</Link>
-                        <button onClick={() =>{
-                            actions.addFavorites(element)
-                        }} href="#" className="btn btn-outline-warning"><i className="fa fa-heart" aria-hidden="true"></i></button>
+                <div key={index} className="row row-cols-1 row-cols-md-9 g-1 mx-2 mb-3">
+                    <div className="card" style={{width: "18rem"}}>
+                        <img className="card-img-top" src={store.img + element.uid + ".jpg"} alt="Card image cap"/>
+                        <div className="card-body">
+                            <h5 className="card-title">{element.name}</h5>
+                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <Link to={"/details/" + element.uid} >
+                                <button className="btn btn-outline-primary" onClick={() => {
+                                    actions.loadDetials(element)
+                                }}></button>
+                                Learn More</Link>
+                            <button onClick={() =>{
+                                actions.addFavorites(element)
+                            }} href="#" className="btn btn-outline-warning"><i className="fa fa-heart" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                 </div>
 			)

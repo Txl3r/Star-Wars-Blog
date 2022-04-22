@@ -1,3 +1,5 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -19,22 +21,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(error => console.error("error", error))
 			},
 
-			loadDetails: () => {
-				fetch("https://www.swapi.tech/api/people/1",{
+			loadDetails: (num) => {
+				fetch(num.url,{
 					method: "GET",
 					redirect: "follow",
 				})
 				.then(response => response.json())
-				.then((result) => setStore({space: result}))
+				.then((result) => console.log(result))
 				.catch(error => console.error("error", error))
 			},
 
 			addFavorites: (item) =>{
-				setStore({addFavorites: [...store.addFavorites, item]})
+				const store = getStore()
+				setStore({fav: [...store.fav, item]})
+
+				}
 			}
 		
 		}
 	};
-};
+
 
 export default getState;
