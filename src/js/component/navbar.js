@@ -12,12 +12,18 @@ export const Navbar = () => {
 			</Link>
 			<div className="dropdown">
 				<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-					Dropdown button
+					Favorites
 				</button>
 				<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 					{store.fav && store.fav.map((element, index) => {
 						return(
-							<li key={index}><a className="dropdown-item">{element.name}</a></li>
+							<li key={index}><a className="dropdown-item"><Link to={"/details/" + element.name}>
+								<button className="btn btn-outline-primary" onClick={() =>{
+									actions.loadDetails(element)
+								}}>{element.name}</button>
+								</Link></a>
+								<button className="btn btn-outline-danger" onClick={() =>{actions.deleteFav(defa)}}>Delete</button>
+							</li>
 						)
 					})}
 				</ul>

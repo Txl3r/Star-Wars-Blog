@@ -5,6 +5,11 @@ import { Context } from "../store/appContext.js"
 export const Card = () => {
     const {store, actions} = useContext(Context)
     console.log(store)
+    const duplicate = (element) => {
+        if (store.fav.includes(element)) {
+            alert("IT'S A TRAP")}
+        else (actions.addFavorites(element))
+        }
     return(
         <>
 		{store.data.results && store.data.results.map((element, index) => {
@@ -21,7 +26,7 @@ export const Card = () => {
                                 }}>Learn More</button>
                                 </Link>
                             <button onClick={() =>{
-                                actions.addFavorites(element)
+                                duplicate(element)
                             }} href="#" className="btn btn-outline-warning"><i className="fa fa-heart" aria-hidden="true"></i></button>
                         </div>
                     </div>

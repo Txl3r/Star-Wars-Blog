@@ -36,6 +36,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({fav: [...store.fav, item]})
 
 				}
+			},
+
+			deleteFav: (defa)=>{
+				const store = getStore()
+				const def = store.fav.filter((element, index) => index !== x);
+				setStore({fav : def})
 			}
 		
 		}
