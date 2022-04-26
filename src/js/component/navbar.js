@@ -22,7 +22,7 @@ export const Navbar = () => {
 									actions.loadDetails(element)
 								}}>{element.name}</button>
 								</Link></a>
-								<button className="btn btn-outline-danger" onClick={() =>{actions.deleteFav(defa)}}>Delete</button>
+								<button className="btn btn-outline-danger" onClick={() =>{actions.deleteFav(index)}}>Delete</button>
 							</li>
 						)
 					})}
